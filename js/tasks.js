@@ -21,7 +21,9 @@ console.log(getUsersWithEyeColor(users, "blue"));
 /* Задание 3
 Получить массив имен пользователей по полу (поле gender). */
 const getUsersWithGender = (users, gender) => {
-  return users.filter((user) => user.gender === gender);
+  return users
+    .filter((user) => user.gender === gender)
+    .map((user) => user.name);
 };
 
 console.log(getUsersWithGender(users, "male"));
@@ -70,7 +72,9 @@ console.log(calculateTotalBalance(users));
 /* Задание 8
 Массив имен всех пользователей у которых есть друг с указанным именем. */
 const getUsersWithFriend = (users, friendName) => {
-  return users.filter((user) => user.friends.includes(friendName));
+  return users
+    .filter((user) => user.friends.includes(friendName))
+    .map((user) => user.name);
 };
 
 console.log(getUsersWithFriend(users, "Briana Decker"));
